@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+  --Almost-White: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Almost-Black: hsl(0, 0%, 8%);
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  background-color: var(--Almost-White);
+  font-size: 1.6rem;
+  width: 380px;
+  margin: 2rem auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-hamburger i,
+.nav-close i {
+  font-size: 3rem;
+  color: var(--Medium-Gray);
+  cursor: pointer;
+}
+
+/* nav hamburger side starts here */
+.nav-links.show {
+  background-color: var(--Almost-White);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  z-index: 15;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links::before {
+  content: '';
+  background-color: black;
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  right: 60vw;
+  width: 40vw;
+  height: 100%;
+  z-index: 3;
+}
+
+.nav-close {
+  position: absolute;
+  top: 2rem;
+  right: 20vw;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--Medium-Gray);
+  font-weight: 700;
+  padding-left: 3.1rem;
+}
+
+.nav-menu a:hover {
+  color: var(--Almost-Black);
+}
+
+/*features and company dropdown*/
+.features-div,
+.company-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.features-top,
+.company-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  list-style: none;
+  color: var(--Medium-Gray);
+  cursor: pointer;
+}
+
+.features-top:hover,
+.company-top:hover {
+  color: var(--Almost-Black);
+}
+
+.features-top h3,
+.company-top h3 {
+  font-size: 1.6rem;
+}
+
+.features-bottom ul.show,
+.company-bottom ul.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.features-bottom ul,
+.company-bottom ul {
+  display: none;
+}
+
+.features-bottom ul li,
+.company-bottom ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 1rem;
+  color: var(--Medium-Gray);
+  list-style: none;
+  cursor: pointer;
+}
+
+.features-bottom ul li:hover,
+.company-bottom ul li:hover {
+  color: var(--Almost-Black);
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 3rem;
+}
+
+.login-btn a {
+  text-decoration: none;
+  color: var(--Medium-Gray);
+}
+
+.register-btn a {
+  padding: 1rem 5rem;
+  color: var(--Medium-Gray);
+  background-color: transparent;
+  border: solid 1px var(--Medium-Gray);
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.login-btn a:hover {
+  color: var(--Almost-Black);
+}
+
+.register-btn a:hover {
+  color: var(--Almost-Black);
+  border: solid 1px var(--Almost-Black);
+}
+/* nav hamburger side stops here */
+
+.content-container {
+  margin-top: 2rem;
+}
+
+.content-img img {
+  width: 38rem;
+}
+
+.content-img-desk {
+  display: none;
+}
+
+.content-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-body h1 {
+  text-align: center;
+}
+
+.content-body p {
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 22px;
+  color: var(--Medium-Gray);
+  margin-top: -1rem;
+}
+
+.content-body button {
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #000;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.content-body button:hover {
+  color: #000;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.content-clients {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.content-clients img {
+  width: 75px;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  body {
+    width: auto;
+  }
+
+  /* Because I diddnt want to manually override all the styles from mobile, I had to reset them all. Might be a lazy approach, but whatever. LMAO */
+
+  .nav-links,
+  .nav-links::before,
+  .nav-menu,
+  .nav-menu a,
+  .features-div,
+  .company-div,
+  .features-top,
+  .company-top,
+  .features-bottom,
+  .company-bottom,
+  .features-bottom ul,
+  .company-bottom ul,
+  .nav-btn {
+    all: initial;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 700;
+  }
+
+  .nav-logo {
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  .nav-hamburger,
+  .nav-close {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  /*features and company dropdown*/
+  .features-div,
+  .company-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+  }
+
+  .features-top,
+  .company-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    list-style: none;
+    color: var(--Medium-Gray);
+    cursor: pointer;
+  }
+
+  .features-top:hover,
+  .company-top:hover {
+    color: var(--Almost-Black);
+  }
+
+  .features-top h3,
+  .company-top h3 {
+    font-size: 1.6rem;
+  }
+
+  .features-bottom,
+  .company-bottom {
+    position: absolute;
+    top: 4rem;
+  }
+
+  .features-bottom ul.show,
+  .company-bottom ul.show {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem 1rem;
+  }
+
+  .features-bottom ul,
+  .company-bottom ul {
+    display: none;
+  }
+
+  .features-bottom ul li,
+  .company-bottom ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.3rem;
+    gap: 1rem;
+    color: var(--Medium-Gray);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .features-bottom ul li:hover,
+  .company-bottom ul li:hover {
+    color: var(--Almost-Black);
+  }
+  /*features and company dropdown ends*/
+
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--Medium-Gray);
+    font-weight: 700;
+  }
+
+  .nav-menu a:hover {
+    color: var(--Almost-Black);
+  }
+
+  .nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .login-btn a {
+    text-decoration: none;
+    color: var(--Medium-Gray);
+  }
+
+  .register-btn a {
+    padding: 1rem 2rem;
+    color: var(--Medium-Gray);
+    background-color: transparent;
+    border: solid 1px var(--Medium-Gray);
+    border-radius: 12px;
+    text-decoration: none;
+  }
+
+  .login-btn a:hover {
+    color: var(--Almost-Black);
+  }
+
+  .register-btn a:hover {
+    color: var(--Almost-Black);
+    border: solid 1px var(--Almost-Black);
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5rem;
+  }
+
+  .content-img {
+    display: none;
+  }
+
+  .content-img-desk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+  }
+
+  .content-img-desk img {
+    width: 70%;
+  }
+
+  .content-body {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    gap: 3rem;
+  }
+
+  .content-body h1 {
+    text-align: left;
+    font-size: 6rem;
+    margin-right: 3rem;
+  }
+
+  .content-body p {
+    text-align: left;
+    font-size: 2rem;
+    margin-right: 3rem;
+  }
+
+  .content-body button {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .content-clients {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .content-clients img {
+    width: 85px;
+  }
+}
